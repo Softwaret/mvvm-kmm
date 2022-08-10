@@ -3,6 +3,7 @@ plugins {
     kotlin("native.cocoapods")
     id("com.android.library")
     kotlin("plugin.serialization") version "1.7.0"
+    id("kotlin-parcelize")
 }
 
 version = "1.0"
