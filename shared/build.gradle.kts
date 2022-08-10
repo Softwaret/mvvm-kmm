@@ -27,6 +27,7 @@ kotlin {
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
+                api(project(":mvvm"))
             }
         }
         val androidMain by getting
