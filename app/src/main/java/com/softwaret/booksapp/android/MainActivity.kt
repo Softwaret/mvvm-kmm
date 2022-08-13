@@ -1,20 +1,33 @@
 package com.softwaret.booksapp.android
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.softwaret.booksapp.Greeting
-import android.widget.TextView
-
-fun greet(): String {
-    return Greeting().greeting()
-}
+import androidx.activity.compose.setContent
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.createSavedStateHandle
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.softwaret.booksapp.books.vm.BooksViewModel
+import com.softwaret.booksapp.books.vm.BooksViewModelFactory
+import com.softwaret.mvi.android.books.ui.BooksScreen
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        val tv: TextView = findViewById(R.id.text_view)
-        tv.text = greet()
+        setContent {
+            val navController = rememberNavController()
+            NavHost(navController = navController, startDestination = "books")
+            {
+                composable(
+                    route = "books"
+                ) {
+                    BooksScreen(
+                        viewModel { BooksViewModelFactory(createSavedStateHandle()).create() }
+                    )
+                }
+            }
+        }
     }
 }

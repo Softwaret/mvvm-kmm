@@ -8,8 +8,7 @@ private typealias AndroidXViewModel = androidx.lifecycle.ViewModel
 
 actual abstract class ViewModel actual constructor(
     internal val config: Config
-) :
-    AndroidXViewModel() {
+) : AndroidXViewModel() {
 
     final override fun onCleared() {
         super.onCleared()
