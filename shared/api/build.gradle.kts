@@ -2,7 +2,7 @@ plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
     id("com.android.library")
-    id("kotlin-parcelize")
+    kotlin("plugin.serialization")
 }
 
 version = "1.0"
@@ -18,7 +18,7 @@ kotlin {
         homepage = "Link to the Shared Module homepage"
         ios.deploymentTarget = "14.1"
         framework {
-            baseName = "mvvm"
+            baseName = "api"
         }
     }
     
@@ -26,6 +26,10 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+                implementation("io.ktor:ktor-client-core:2.0.3")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3")
+                implementation("io.ktor:ktor-client-content-negotiation:2.0.3")
+                implementation("io.ktor:ktor-serialization-kotlinx-json:2.0.3")
             }
         }
         val commonTest by getting {
@@ -35,8 +39,7 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
-                implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1")
+                implementation("io.ktor:ktor-client-okhttp:2.0.3")
             }
         }
         val androidTest by getting
@@ -48,6 +51,9 @@ kotlin {
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
+            dependencies {
+                implementation("io.ktor:ktor-client-darwin:2.0.3")
+            }
         }
         val iosX64Test by getting
         val iosArm64Test by getting

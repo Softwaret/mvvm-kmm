@@ -5,6 +5,8 @@
 .DS_Store
 /build
 */build
+*/*/build
+*/api/build/
 /captures
 .externalNativeBuild
 .cxx
