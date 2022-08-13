@@ -4,6 +4,6 @@ package com.softwaret.mvvvm
 @OptionalExpectation
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.BINARY)
-expect annotation class Parcelize
+expect annotation class Parcelize()
 
 expect interface Parcelable

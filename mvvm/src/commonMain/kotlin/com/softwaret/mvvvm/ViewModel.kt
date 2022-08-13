@@ -8,7 +8,7 @@ expect abstract class ViewModel(config: Config) {
     open fun onClear()
 }
 
-expect val ViewModel.scope: CoroutineScope
+expect val ViewModel.viewModelScope: CoroutineScope
 
 expect val ViewModel.ioDispatcher: CoroutineDispatcher
 

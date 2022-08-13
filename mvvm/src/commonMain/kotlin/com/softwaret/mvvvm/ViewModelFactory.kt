@@ -1,6 +1,6 @@
 package com.softwaret.mvvvm
 
-interface ViewModelFactory<T : ViewModel> {
+expect interface ViewModelFactory<out T : ViewModel> {
 
     fun create(): T
 }

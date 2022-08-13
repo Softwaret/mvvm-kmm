@@ -19,7 +19,7 @@ actual abstract class ViewModel actual constructor(
     actual open fun onClear() = Unit
 }
 
-actual val ViewModel.scope: CoroutineScope
+actual val ViewModel.viewModelScope: CoroutineScope
     get() = viewModelScope
 
 actual val ViewModel.ioDispatcher: CoroutineDispatcher
