@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
-		0C0EA01F28A783F000157951 /* BaseViewModelAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0EA01E28A783F000157951 /* BaseViewModelAdapter.swift */; };
 		0C0EA02128A785F400157951 /* BooksViewModelAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0EA02028A785F400157951 /* BooksViewModelAdapter.swift */; };
+		0C0F210728ABA98C00379212 /* AsyncNativeFlowAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0F210628ABA98C00379212 /* AsyncNativeFlowAdapter.swift */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		53D4E7A757C8C1A2744A0CBC /* Pods_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E12F6F477574033855D3279 /* Pods_ios.framework */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
@@ -19,8 +19,8 @@
 /* Begin PBXFileReference section */
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		0C0EA01E28A783F000157951 /* BaseViewModelAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelAdapter.swift; sourceTree = "<group>"; };
 		0C0EA02028A785F400157951 /* BooksViewModelAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModelAdapter.swift; sourceTree = "<group>"; };
+		0C0F210628ABA98C00379212 /* AsyncNativeFlowAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncNativeFlowAdapter.swift; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		6E12F6F477574033855D3279 /* Pods_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF7B242A565900829871 /* ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,12 +50,20 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		0C0EA01D28A783DA00157951 /* books */ = {
+		0C0EA01D28A783DA00157951 /* Books */ = {
 			isa = PBXGroup;
 			children = (
 				0C0EA02028A785F400157951 /* BooksViewModelAdapter.swift */,
 			);
-			path = books;
+			path = Books;
+			sourceTree = "<group>";
+		};
+		0C0F210528ABA95700379212 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				0C0F210628ABA98C00379212 /* AsyncNativeFlowAdapter.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		7555FF72242A565900829871 = {
@@ -79,13 +87,13 @@
 		7555FF7D242A565900829871 /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				0C0EA01D28A783DA00157951 /* books */,
+				0C0F210528ABA95700379212 /* Util */,
+				0C0EA01D28A783DA00157951 /* Books */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				7555FF82242A565900829871 /* ContentView.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
-				0C0EA01E28A783F000157951 /* BaseViewModelAdapter.swift */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -204,9 +212,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
+				0C0F210728ABA98C00379212 /* AsyncNativeFlowAdapter.swift in Sources */,
 				0C0EA02128A785F400157951 /* BooksViewModelAdapter.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
-				0C0EA01F28A783F000157951 /* BaseViewModelAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

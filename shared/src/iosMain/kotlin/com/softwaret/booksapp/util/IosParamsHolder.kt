@@ -1,4 +1,6 @@
-package com.softwaret.mvvvm
+package com.softwaret.booksapp.util
+
+import com.softwaret.mvvvm.ParamsHolder
 
 class IosParamsHolder(
     private val params: Map<String, Any> = emptyMap()

@@ -1,4 +1,4 @@
-package com.softwaret.mvvvm
+package com.softwaret.booksapp.util
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

@@ -1,11 +1,11 @@
 package com.softwaret.booksapp.books.vm
 
-import com.softwaret.mvvvm.IosParamsHolder
+import com.softwaret.booksapp.util.CloseableCoroutineScope
+import com.softwaret.booksapp.util.IosParamsHolder
 import com.softwaret.mvvvm.StatefulConfig
-import kotlinx.coroutines.CoroutineScope
 
 actual class BooksViewModelFactory(
-    private val scope: CoroutineScope,
+    private val scope: CloseableCoroutineScope,
     private val paramsHolder: IosParamsHolder
 ) : BaseBooksViewModelFactory() {
 
