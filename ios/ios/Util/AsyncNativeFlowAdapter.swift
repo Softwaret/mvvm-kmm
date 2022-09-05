@@ -16,7 +16,7 @@ enum AsyncError: Error {
     case OnThrow(throwable: KotlinThrowable)
 }
 
-class AsyncNatvieFlowTypeWrapper<T : AnyObject> {
+class AsyncFlowAdapter<T : AnyObject> {
     
     @MainActor
     func subscribe(
@@ -24,16 +24,18 @@ class AsyncNatvieFlowTypeWrapper<T : AnyObject> {
         flow: Kotlinx_coroutines_coreFlow,
         update: @MainActor @escaping (T) -> ()
     ) async throws {
-        try await withCheckedThrowingContinuation { continuation in
-            NativeFlowTypeWrapper<T>(flow: flow).subscribe(scope: scope) { item in
-                if(item == nil) {
-                    continuation.resume(throwing: AsyncError.NilUpdate)
+       try await withTaskCancellationHandler(handler: { scope.close() }) {
+           try await withCheckedThrowingContinuation { continuation in
+                NativeFlowTypeWrapper<T>(flow: flow).subscribe(scope: scope) { item in
+                    if(item == nil) {
+                        continuation.resume(throwing: AsyncError.NilUpdate)
+                    }
+                    update(item!)
+                } onComplete: {
+                    continuation.resume()
+                } onThrow: { throwable in
+                    continuation.resume(throwing: AsyncError.OnThrow(throwable: throwable))
                 }
-                update(item!)
-            } onComplete: {
-                continuation.resume()
-            } onThrow: { throwable in
-                continuation.resume(throwing: AsyncError.OnThrow(throwable: throwable))
             }
         }
     }

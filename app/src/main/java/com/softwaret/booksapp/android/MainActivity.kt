@@ -8,9 +8,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.softwaret.booksapp.android.books.ui.BooksScreen
 import com.softwaret.booksapp.books.vm.BooksViewModel
-import com.softwaret.booksapp.books.vm.BooksViewModelFactory
-import com.softwaret.mvi.android.books.ui.BooksScreen
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,7 +23,7 @@ class MainActivity : AppCompatActivity() {
                     route = "books"
                 ) {
                     BooksScreen(
-                        viewModel { BooksViewModelFactory(createSavedStateHandle()).create() }
+                        viewModel { BooksViewModel(createSavedStateHandle()) }
                     )
                 }
             }

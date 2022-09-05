@@ -4,6 +4,7 @@ plugins {
     id("com.android.library")
     kotlin("plugin.serialization") version "1.7.0"
     id("kotlin-parcelize")
+    id("com.google.devtools.ksp") version "1.7.0-1.0.6"
 }
 
 version = "1.0"
@@ -23,8 +24,9 @@ kotlin {
             baseName = "shared"
         }
     }
-    
+
     sourceSets {
+
         val commonMain by getting {
             dependencies {
                 implementation(project(":shared:api"))
@@ -32,6 +34,7 @@ kotlin {
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3")
                 implementation("io.ktor:ktor-client-content-negotiation:2.0.3")
                 implementation("io.ktor:ktor-serialization-kotlinx-json:2.0.3")
+                implementation("me.tatarka.inject:kotlin-inject-runtime:0.5.1")
             }
         }
         val commonTest by getting {
@@ -65,6 +68,17 @@ kotlin {
             iosSimulatorArm64Test.dependsOn(this)
         }
     }
+}
+
+kotlin.sourceSets.commonMain {
+    kotlin.srcDir("build/generated/ksp/")
+}
+
+dependencies {
+    add("kspAndroid", "me.tatarka.inject:kotlin-inject-compiler-ksp:0.5.1")
+    add("kspIosX64", "me.tatarka.inject:kotlin-inject-compiler-ksp:0.5.1")
+    add("kspIosArm64", "me.tatarka.inject:kotlin-inject-compiler-ksp:0.5.1")
+    add("kspIosSimulatorArm64", "me.tatarka.inject:kotlin-inject-compiler-ksp:0.5.1")
 }
 
 android {

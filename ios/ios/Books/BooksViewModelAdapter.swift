@@ -8,6 +8,7 @@
 
 import Foundation
 import shared
+import SwiftUI
 
 struct BookTile {
     let title: String
@@ -26,9 +27,11 @@ class BooksViewModelAdapter : ObservableObject {
     @Published var bookTiles = [BookTile]()
     
     init(id: Int) {
-        self.viewModel = BooksViewModelFactory(scope: scope, paramsHolder: IosParamsHolder(params: ["id" : id])).create()
+        //Should be in some kind of AppDelegate etc.
+        SharedApp().initialize(baseUrl: "https://wolnelektury.pl/api/", baseUrlParameters: [:])
+        self.viewModel = BooksViewModelKt.BooksViewModel(scope: scope, paramsHolder: IosParamsHolder(params: ["id" : id]))
         uiStateTask = Task.init {
-            try await AsyncNatvieFlowTypeWrapper<BooksUiState>().subscribe(scope: scope, flow: viewModel.uiState) { state in
+            try await AsyncFlowAdapter<BooksUiState>().subscribe(scope: scope, flow: viewModel.uiState) { state in
                 self.bookTiles = state.bookTiles.map { commonTile in
                     BookTile(title: commonTile.title, author: commonTile.author, imageUrl: commonTile.imageUrl)
                 }

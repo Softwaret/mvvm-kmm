@@ -6,9 +6,11 @@ import com.softwaret.mvvvm.Parcelable
 import com.softwaret.mvvvm.Parcelize
 import com.softwaret.mvvvm.StatefulConfig
 import com.softwaret.mvvvm.StatefulViewModel
+import com.softwaret.mvvvm.ViewModel
 import com.softwaret.mvvvm.viewModelScope
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import me.tatarka.inject.annotations.Inject
 
 @Parcelize
 data class BooksUiState(
@@ -39,4 +41,8 @@ class BooksViewModel internal constructor(
     }
 
     private fun Book.toBookTile() = BookTile(title = title, author = author, imageUrl = imageUrl)
+}
+
+expect class Preferences {
+
 }

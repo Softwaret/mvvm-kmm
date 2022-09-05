@@ -3,8 +3,10 @@ package com.softwaret.booksapp.books.usecase
 import com.softwaret.booksapp.books.service.BooksApiService
 import com.softwaret.booksapp.books.usecase.mapper.toBook
 import com.softwaret.booksapp.books.usecase.model.Book
+import me.tatarka.inject.annotations.Inject
 
 
+@Inject
 class GetBooksUseCase(
     private val booksApiService: BooksApiService
 ) {

@@ -1,4 +1,4 @@
-package com.softwaret.mvi.android.books.ui
+package com.softwaret.booksapp.android.books.ui
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyColumn
@@ -9,6 +9,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import com.softwaret.booksapp.books.vm.BookTile
 import com.softwaret.booksapp.books.vm.BooksViewModel
+import com.softwaret.mvi.android.books.ui.Book
 
 @Composable
 fun BooksScreen(
