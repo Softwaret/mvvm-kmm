@@ -1,4 +1,5 @@
 import SwiftUI
+import shared
 
 @main
 struct iOSApp: App {
@@ -8,4 +9,8 @@ struct iOSApp: App {
 			ContentView(booksViewModelAdapter: BooksViewModelAdapter(id: 4))
 		}
 	}
+
+    init() {
+        SharedApp().initialize(baseUrl: "https://wolnelektury.pl/api/", baseUrlParameters: [:])
+    }
 }

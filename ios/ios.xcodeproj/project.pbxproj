@@ -14,6 +14,8 @@
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		53D4E7A757C8C1A2744A0CBC /* Pods_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E12F6F477574033855D3279 /* Pods_ios.framework */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
+		BCDDA0CC28CB86E10022BCF2 /* BooksUiStatePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDDA0CB28CB86E10022BCF2 /* BooksUiStatePublisher.swift */; };
+		BCDDA0CE28CB86FC0022BCF2 /* BookTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDDA0CD28CB86FC0022BCF2 /* BookTile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97650598A7B56A4988EDA202 /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.release.xcconfig"; path = "Target Support Files/Pods-ios/Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
 		9ADD14FEA927C25BC6D31436 /* Pods-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.debug.xcconfig"; path = "Target Support Files/Pods-ios/Pods-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		BCDDA0CB28CB86E10022BCF2 /* BooksUiStatePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksUiStatePublisher.swift; sourceTree = "<group>"; };
+		BCDDA0CD28CB86FC0022BCF2 /* BookTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			isa = PBXGroup;
 			children = (
 				0C0EA02028A785F400157951 /* BooksViewModelAdapter.swift */,
+				BCDDA0CB28CB86E10022BCF2 /* BooksUiStatePublisher.swift */,
+				BCDDA0CD28CB86FC0022BCF2 /* BookTile.swift */,
 			);
 			path = Books;
 			sourceTree = "<group>";
@@ -211,7 +217,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCDDA0CC28CB86E10022BCF2 /* BooksUiStatePublisher.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
+				BCDDA0CE28CB86FC0022BCF2 /* BookTile.swift in Sources */,
 				0C0F210728ABA98C00379212 /* AsyncNativeFlowAdapter.swift in Sources */,
 				0C0EA02128A785F400157951 /* BooksViewModelAdapter.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,

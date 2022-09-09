@@ -15,3 +15,7 @@ fun BooksViewModel(
     ),
     getBooksUseCase = useCaseComponent.getBooksUseCase
 )
+
+actual class Preferences {
+
+}
