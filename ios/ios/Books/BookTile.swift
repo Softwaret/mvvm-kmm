@@ -6,9 +6,12 @@
 //  Copyright © 2022 orgName. All rights reserved.
 //
 
+import Foundation
 import shared
 
-struct BookTile {
+struct BookTile: Identifiable {
+    
+    let id = UUID()
     let title: String
     let author: String
     let imageUrl: String
